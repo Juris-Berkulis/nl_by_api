@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import NewsList from '@/components/NewsList.vue';
+
 </script>
 
 <template>
-<main>
-    <RouterView />
-</main>
+<NewsList />
 </template>
 
 <style scoped>
