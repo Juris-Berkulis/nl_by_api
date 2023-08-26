@@ -28,9 +28,11 @@ const imageUrl: ComputedRef<string> = computed(() => {
 
 <template>
 <li class="listItem">
-    <div class="date">{{ getDate(newsItem.date) }}</div>
-    <h2 class="title">{{ newsItem.name }}</h2>
-    <div class="category">{{ newsItem.type.value }}</div>
+    <RouterLink class="link" to="#">
+        <div class="date">{{ getDate(newsItem.date) }}</div>
+        <h2 class="title">{{ newsItem.name }}</h2>
+        <div class="category">{{ newsItem.type.value }}</div>
+    </RouterLink>
 </li>
 </template>
 
@@ -40,15 +42,11 @@ const imageUrl: ComputedRef<string> = computed(() => {
     max-width: 412px;
     padding: 24px;
     background-color: #f8f8f8;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 .listItem:first-child {
     width: 100%;
     max-width: 848px;
-    justify-content: flex-end;
     background: linear-gradient(360deg, #414141 0%, rgba(59, 205, 251, 0.00) 100%), v-bind(imageUrl), lightgray 50% / cover no-repeat;
     backdrop-filter: blur(50px);
 }
@@ -80,6 +78,18 @@ const imageUrl: ComputedRef<string> = computed(() => {
         background: none;
         backdrop-filter: none;
     }
+}
+
+.link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.listItem:first-child .link {
+    justify-content: flex-end;
 }
 
 .date {
