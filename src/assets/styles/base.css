@@ -3,3 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.15;
+  word-wrap: break-word;
+  font-family: 'Times New Roman Cyr', 'Times New Roman', serif;
+}
+
+body, 
+button, 
+input, 
+a {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s linear 0s;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s linear 0s;
+}
+
+ul {
+  list-style: none;
+}
