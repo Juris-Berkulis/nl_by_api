@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { News } from '@/types';
 import { computed, type ComputedRef } from 'vue';
+import type { News } from '@/types';
 
 interface Props {
     newsItem: News,

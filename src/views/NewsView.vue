@@ -44,7 +44,13 @@ const nextPage = (): void => {
 </script>
 
 <template>
-<NewsList :newsList="newsList" :currentPage="currentPage" :totalPages="totalPages" :nextPage="nextPage" :isLoading="isLoading" />
+<NewsList 
+    :newsList="newsList" 
+    :currentPage="currentPage" 
+    :totalPages="totalPages" 
+    :nextPage="nextPage" 
+    :isLoading="isLoading" 
+/>
 </template>
 
 <style scoped>

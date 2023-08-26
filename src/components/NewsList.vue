@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { News } from '@/types';
 import NewsListItem from '@/components/NewsListItem.vue';
 import BaseLoader from '@/components/BaseLoader.vue';
+import type { News } from '@/types';
 
 interface Props {
     newsList: Array<News>, 
