@@ -33,3 +33,7 @@ button {
 ul {
   list-style: none;
 }
+
+svg {
+  fill: currentColor;
+}
