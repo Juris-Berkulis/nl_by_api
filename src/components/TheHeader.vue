@@ -22,7 +22,7 @@
 .header {
     width: 100%;
     height: 324px;
-    background: #231F20;
+    background-color: #231F20;
     padding: 40px max(calc((100% - 1440px) / 2 + 78px), 78px);
     display: flex;
     flex-direction: column;

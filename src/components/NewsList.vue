@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import type { News } from '@/types';
 import NewsListItem from '@/components/NewsListItem.vue';
+import BaseLoader from '@/components/BaseLoader.vue';
 
 interface Props {
     newsList: Array<News>, 
     currentPage: number, 
     totalPages: number,
     nextPage: () => void,
+    isLoading: boolean,
 };
 
 defineProps<Props>();
@@ -17,7 +19,8 @@ defineProps<Props>();
     <ul class="list">
         <NewsListItem v-for="newsItem of newsList" :key="newsItem.code" :newsItem="newsItem" />
     </ul>
-    <button class="btn" v-if="currentPage !== totalPages" @click="nextPage">Загрузить ещё</button>
+    <BaseLoader v-if="isLoading" />
+    <button class="btn" v-else-if="currentPage !== totalPages" @click="nextPage">Загрузить ещё</button>
 </div>
 </template>
 

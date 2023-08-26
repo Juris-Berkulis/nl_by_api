@@ -33,7 +33,7 @@ import IconTwitter from '@/components/IconTwitter.vue';
 <style scoped>
 .footer {
     width: 100%;
-    background: #f8f8f8;
+    background-color: #f8f8f8;
     padding: 40px max(calc((100% - 1440px) / 2 + 78px), 78px);
     display: flex;
     justify-content: space-between;

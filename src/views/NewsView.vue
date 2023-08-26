@@ -14,20 +14,23 @@ interface FetchResult {
 const newsList: Ref<News[]> = ref([]);
 const currentPage: Ref<number> = ref(1);
 const totalPages: Ref<number> = ref(0);
+const isLoading: Ref<boolean> = ref(false);
 
 const fetchNewsList = async () => {
+    isLoading.value = true;
     try {
         const response: Response = await fetch(`https://flems.github.io/test/api/news/${currentPage.value}`);
         if (response.ok) {
             const fetchResult: FetchResult = await response.json();
             newsList.value.push(...fetchResult.items);
             totalPages.value = fetchResult.nav.total;
-            console.log(newsList.value)
         } else {
             throw `Ошибка при запросе`
         }
     } catch (error) {
         console.log(error);
+    } finally {
+        isLoading.value = false;
     }
 };
 
@@ -41,7 +44,7 @@ const nextPage = (): void => {
 </script>
 
 <template>
-<NewsList :newsList="newsList" :currentPage="currentPage" :totalPages="totalPages" :nextPage="nextPage" />
+<NewsList :newsList="newsList" :currentPage="currentPage" :totalPages="totalPages" :nextPage="nextPage" :isLoading="isLoading" />
 </template>
 
 <style scoped>
